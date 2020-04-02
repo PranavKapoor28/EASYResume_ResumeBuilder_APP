@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/pkkk"
+    tools:context=".AboutActivity">
+
+    <TextView
+        android:id="@+id/textView38"
+        android:layout_width="365dp"
+        android:layout_height="337dp"
+        android:text="EasyRESUME is an app that lets you create your resume in minutes. Those days are gone when you need to spend days for creating a professional resume. Just enter your details and you get your professional resume in Minutes. Extract the PDF file and use it to increase your chances of getting Internships/Jobs."
+        android:textColor="#111111"
+        android:textSize="24sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.931"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView37" />
+
+    <TableRow
+        android:id="@+id/hr"
+        android:layout_width="363dp"
+        android:layout_height="5dp"
+        android:background="#444"
+        app:layout_constraintBottom_toTopOf="@+id/textView37"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView36"
+        app:layout_constraintVertical_bias="0.35"></TableRow>
+
+    <TextView
+        android:id="@+id/textView37"
+        android:layout_width="357dp"
+        android:layout_height="29dp"
+        android:text="CREATE YOUR RESUME IN MINUTES"
+        android:textColor="#64F82E"
+        android:textSize="21sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.279" />
+
+    <TextView
+        android:id="@+id/textView36"
+        android:layout_width="242dp"
+        android:layout_height="54dp"
+        android:text="EasyRESUME"
+        android:textColor="#64F82E"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView37"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.823" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

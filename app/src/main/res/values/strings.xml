@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ResumeBuilder</string>
+    <string name="nameerror">Enter a valid name</string>
+    <string name="emailerror">Enter a valid email</string>
+    <string name="mobileerror">Enter a valid mobile</string>
+    <string name="addresserror">Enter a valid address</string>
+    <string name="langerror">Enter a valid language</string>
+</resources>
