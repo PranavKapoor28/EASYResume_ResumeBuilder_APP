@@ -1,20 +1,34 @@
 package com.example.resumebuilder;
 
+import android.Manifest;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
+
+import java.io.FileOutputStream;
+import java.text.SimpleDateFormat;
+import java.util.Locale;
 
 public class SecondActivity extends AppCompatActivity {
+
+    private static final int STORAGE_CODE=1000;
 
     TextView tv;
     TextView tv1;
@@ -52,6 +66,9 @@ public class SecondActivity extends AppCompatActivity {
     String st14;
     String st15;
     DatabaseReference reff;
+    Button button9;
+
+
 
 
     @Override
@@ -84,7 +101,9 @@ public class SecondActivity extends AppCompatActivity {
         reff = FirebaseDatabase.getInstance().getReference().child("Member");
 
 
-        reff.addValueEventListener(new ValueEventListener() {
+
+
+        /*reff.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
@@ -104,11 +123,9 @@ public class SecondActivity extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
-        });
+        });*/
 
-
-
-        /*Intent receiveIntent=getIntent();
+        Intent receiveIntent=getIntent();
 
 
         st=receiveIntent.getStringExtra("Value");
@@ -134,8 +151,8 @@ public class SecondActivity extends AppCompatActivity {
         st6=getIntent().getExtras().getString("Value6");
         st7=getIntent().getExtras().getString("Value7");
         st8=getIntent().getExtras().getString("Value8");
-        st9=getIntent().getExtras().getString("Value9");
-
+        st9=getIntent().getExtras().getString("Value9");*/
+/*
         tv.setText(st);
         tv1.setText(st1);
         tv2.setText(st2);
@@ -152,10 +169,60 @@ public class SecondActivity extends AppCompatActivity {
         tv13.setText(st13);
         tv14.setText(st14);
         tv15.setText(st15);
-        tv16.setText(st16);
+        tv16.setText(st16);*/
+
+
+        button9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+           if(Build.VERSION.SDK_INT>Build.VERSION_CODES.M){
+               if(checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)== PackageManager.PERMISSION_DENIED){
+                   String[] permissions ={Manifest.permission.WRITE_EXTERNAL_STORAGE};
+                   requestPermissions(permissions,STORAGE_CODE);
+               }
+               else {
+                savePdf();
+               }
+           }
+           else{
+                savePdf();
+           }
+            }
+        });
+
+
     }
+
+    private void savePdf(){
+
+        Document mdoc=new Document();
+        String mFileName= new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault()).format(System.currentTimeMillis());
+String mFilePath= Environment.getExternalStorageDirectory() + "/" + mFileName + ".pdf";
+ try {
+     PdfWriter.getInstance(mdoc,new FileOutputStream(mFilePath));
+     mdoc.open();
+     mdoc.add(new Paragraph(st));
+     mdoc.close();
+     Toast.makeText(this,mFileName+".pdf\nis saved to\n",Toast.LENGTH_SHORT).show();
+ }
+ catch (Exception e){
+     Toast.makeText(this,e.getMessage(),Toast.LENGTH_SHORT).show();
+ }
+
     }
-        */
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        switch (requestCode){
+            case STORAGE_CODE:{
+                if (grantResults.length>0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                    savePdf();
+                }
+                else{
+                    Toast.makeText(this,"Permission denied",Toast.LENGTH_SHORT).show();
+                }
+            }
+        }
 
 
     }

@@ -86,7 +86,7 @@ public class ResumeActivity extends AppCompatActivity {
             public void onClick(View v) {
 
 
-                Intent in = new Intent(getApplicationContext(), SecondActivity.class);
+                Intent in = new Intent(getApplicationContext(), ActivityWork.class);
 
                 st = editText.getText().toString();
                 st1 = editText1.getText().toString();

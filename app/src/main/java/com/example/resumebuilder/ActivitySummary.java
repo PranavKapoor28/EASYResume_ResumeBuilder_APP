@@ -1,6 +1,8 @@
 package com.example.resumebuilder;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -43,7 +45,7 @@ public class ActivitySummary extends AppCompatActivity {
         setContentView(R.layout.activity_summary);
         button5 = findViewById(R.id.button5);
         editText16 = findViewById(R.id.editText16);
-/*
+
 
         button5.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,6 +105,7 @@ public class ActivitySummary extends AppCompatActivity {
 
 
             }
-        });*/
+        });
     }
 }
+
