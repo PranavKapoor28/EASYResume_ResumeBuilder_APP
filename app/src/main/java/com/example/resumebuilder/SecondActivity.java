@@ -1,34 +1,20 @@
 package com.example.resumebuilder;
 
-import android.Manifest;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
-import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.itextpdf.text.Document;
-import com.itextpdf.text.Paragraph;
-import com.itextpdf.text.pdf.PdfWriter;
-
-import java.io.FileOutputStream;
-import java.text.SimpleDateFormat;
-import java.util.Locale;
 
 public class SecondActivity extends AppCompatActivity {
 
-    private static final int STORAGE_CODE=1000;
+    private static final int STORAGE_CODE = 1000;
 
     TextView tv;
     TextView tv1;
@@ -67,8 +53,6 @@ public class SecondActivity extends AppCompatActivity {
     String st15;
     DatabaseReference reff;
     Button button9;
-
-
 
 
     @Override
@@ -125,26 +109,26 @@ public class SecondActivity extends AppCompatActivity {
             }
         });*/
 
-        Intent receiveIntent=getIntent();
+        Intent receiveIntent = getIntent();
 
 
-        st=receiveIntent.getStringExtra("Value");
-        st1=receiveIntent.getStringExtra("Value1");
-        st2=receiveIntent.getStringExtra("Value2");
-        st3=receiveIntent.getStringExtra("Value3");
-        st4=receiveIntent.getStringExtra("Value4");
-        st5=receiveIntent.getStringExtra("Value5");
-        st6=receiveIntent.getStringExtra("Value6");
-        st7=receiveIntent.getStringExtra("Value7");
-        st8=receiveIntent.getStringExtra("Value8");
-        st9=receiveIntent.getStringExtra("Value9");
-        st10=receiveIntent.getStringExtra("Value10");
-        st11=receiveIntent.getStringExtra("Value11");
-        st12=receiveIntent.getStringExtra("Value12");
-        st13=receiveIntent.getStringExtra("Value13");
-        st14=receiveIntent.getStringExtra("Value14");
-        st15=receiveIntent.getStringExtra("Value15");
-        st16=receiveIntent.getStringExtra("Value16");
+        st = receiveIntent.getStringExtra("Value");
+        st1 = receiveIntent.getStringExtra("Value1");
+        st2 = receiveIntent.getStringExtra("Value2");
+        st3 = receiveIntent.getStringExtra("Value3");
+        st4 = receiveIntent.getStringExtra("Value4");
+        st5 = receiveIntent.getStringExtra("Value5");
+        st6 = receiveIntent.getStringExtra("Value6");
+        st7 = receiveIntent.getStringExtra("Value7");
+        st8 = receiveIntent.getStringExtra("Value8");
+        st9 = receiveIntent.getStringExtra("Value9");
+        st10 = receiveIntent.getStringExtra("Value10");
+        st11 = receiveIntent.getStringExtra("Value11");
+        st12 = receiveIntent.getStringExtra("Value12");
+        st13 = receiveIntent.getStringExtra("Value13");
+        st14 = receiveIntent.getStringExtra("Value14");
+        st15 = receiveIntent.getStringExtra("Value15");
+        st16 = receiveIntent.getStringExtra("Value16");
 
 
         /*st5=getIntent().getExtras().getString("Value5");
@@ -152,7 +136,7 @@ public class SecondActivity extends AppCompatActivity {
         st7=getIntent().getExtras().getString("Value7");
         st8=getIntent().getExtras().getString("Value8");
         st9=getIntent().getExtras().getString("Value9");*/
-/*
+
         tv.setText(st);
         tv1.setText(st1);
         tv2.setText(st2);
@@ -169,8 +153,8 @@ public class SecondActivity extends AppCompatActivity {
         tv13.setText(st13);
         tv14.setText(st14);
         tv15.setText(st15);
-        tv16.setText(st16);*/
-
+        tv16.setText(st16);
+/*
 
         button9.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -225,5 +209,6 @@ String mFilePath= Environment.getExternalStorageDirectory() + "/" + mFileName + 
         }
 
 
+    }*/
     }
 }

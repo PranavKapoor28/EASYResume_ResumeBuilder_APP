@@ -9,10 +9,10 @@
 
     <TextView
         android:id="@+id/textView6"
-        android:layout_width="374dp"
-        android:layout_height="76dp"
+        android:layout_width="282dp"
+        android:layout_height="75dp"
         android:text="Add your Educational Information"
-        android:textColor="#FA1D1818"
+        android:textColor="#FAFCF8F8"
         android:textSize="30sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -81,7 +81,7 @@
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="159dp"
+        android:layout_width="208dp"
         android:layout_height="49dp"
         android:background="#9DE069"
         android:text="Next : Skills"
@@ -93,4 +93,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText12"
         app:layout_constraintVertical_bias="0.577" />
+
+    <Button
+        android:id="@+id/button12"
+        android:layout_width="295dp"
+        android:layout_height="58dp"
+        android:background="#D7F53737"
+        android:text="Add another Education Qualification"
+        android:textSize="18sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.426"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button3"
+        app:layout_constraintVertical_bias="0.533" />
 </androidx.constraintlayout.widget.ConstraintLayout>

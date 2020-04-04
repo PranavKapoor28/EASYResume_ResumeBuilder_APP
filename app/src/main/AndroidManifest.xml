@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.resumebuilder">
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -19,7 +19,8 @@
         <activity android:name=".AboutActivity" />
         <activity android:name=".ActivitySummary" />
         <activity android:name=".SkillsActivity" />
-        <activity android:name=".EducationActivity" />
+        <activity android:name=".EducationActivity"
+            android:exported="true"/>
         <activity
             android:name=".ActivityWork"
             android:exported="true"
@@ -32,7 +33,7 @@
             android:exported="true"
             android:label="EasyRESUME">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.SPLASH" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>

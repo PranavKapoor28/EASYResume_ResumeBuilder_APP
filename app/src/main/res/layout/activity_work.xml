@@ -12,7 +12,7 @@
         android:layout_width="338dp"
         android:layout_height="42dp"
         android:text="Add Your Work History"
-        android:textColor="#0F0F0E"
+        android:textColor="#FAFAF2"
         android:textSize="30sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -120,4 +120,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText7"
         app:layout_constraintVertical_bias="0.256" />
+
+    <Button
+        android:id="@+id/button10"
+        android:layout_width="268dp"
+        android:layout_height="51dp"
+        android:background="#D7F53737"
+        android:text="Add another Work experience"
+        android:textSize="18sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button2"
+        app:layout_constraintVertical_bias="0.533" />
 </androidx.constraintlayout.widget.ConstraintLayout>

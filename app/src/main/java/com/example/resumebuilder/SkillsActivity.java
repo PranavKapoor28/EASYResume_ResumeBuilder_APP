@@ -1,7 +1,5 @@
 package com.example.resumebuilder;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +7,16 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class SkillsActivity extends AppCompatActivity {
     Button button4;
@@ -31,6 +39,9 @@ public class SkillsActivity extends AppCompatActivity {
     String st13;
     String st14;
     String st15;
+    DatabaseReference reff;
+    Member member;
+    long maxid=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,9 +52,27 @@ public class SkillsActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN); //enable full screen
         setContentView(R.layout.activity_skills);
         button4 = findViewById(R.id.button4);
+
         editText13 = findViewById(R.id.editText13);
         editText14 = findViewById(R.id.editText14);
         editText15 = findViewById(R.id.editText15);
+        member=new Member();
+        reff= FirebaseDatabase.getInstance().getReference().child("Member");
+
+
+        reff.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()){
+                    maxid=dataSnapshot.getChildrenCount();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
 
         button4.setOnClickListener(new View.OnClickListener() {
@@ -73,6 +102,13 @@ public class SkillsActivity extends AppCompatActivity {
                 st13 = editText13.getText().toString();
                 st14 = editText14.getText().toString();
                 st15= editText15.getText().toString();
+
+                member.setName(st13);
+                member.setPh(st14);
+                member.setEmail(st15);
+                reff.push().setValue(member);
+                Toast.makeText(SkillsActivity.this,"data inserted successfully",Toast.LENGTH_LONG).show();
+                reff.child(String.valueOf(maxid+1)).setValue("member");
 
                 if(st13.length()==0)
                 {

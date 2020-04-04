@@ -7,8 +7,16 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class ActivitySummary extends AppCompatActivity {
 
@@ -31,6 +39,9 @@ public class ActivitySummary extends AppCompatActivity {
     String st14;
     String st15;
     String st16;
+    DatabaseReference reff;
+    Member member;
+    long maxid=0;
 
 
 
@@ -45,6 +56,23 @@ public class ActivitySummary extends AppCompatActivity {
         setContentView(R.layout.activity_summary);
         button5 = findViewById(R.id.button5);
         editText16 = findViewById(R.id.editText16);
+        member=new Member();
+        reff= FirebaseDatabase.getInstance().getReference().child("Member");
+
+
+        reff.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()){
+                    maxid=dataSnapshot.getChildrenCount();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
 
         button5.setOnClickListener(new View.OnClickListener() {
@@ -75,6 +103,10 @@ public class ActivitySummary extends AppCompatActivity {
                 Intent summary = new Intent(ActivitySummary.this, SecondActivity.class);
 
                 st16 = editText16.getText().toString();
+                member.setName(st16);
+                reff.push().setValue(member);
+                Toast.makeText(ActivitySummary.this,"data inserted sucessfully",Toast.LENGTH_LONG).show();
+                reff.child(String.valueOf(maxid+1)).setValue("member");
 
                 if(st16.length()==0)
                 {

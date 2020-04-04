@@ -1,21 +1,27 @@
 package com.example.resumebuilder;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Patterns;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
-import java.text.SimpleDateFormat;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class ActivityWork extends AppCompatActivity {
 
     Button button2;
+    Button button10;
     EditText editText5;
     EditText editText6;
     EditText editText7;
@@ -32,6 +38,9 @@ public class ActivityWork extends AppCompatActivity {
     String st7;
     String st8;
     String st9;
+    DatabaseReference reff;
+    Member member;
+    long maxid=0;
 
 
 
@@ -57,11 +66,37 @@ public class ActivityWork extends AppCompatActivity {
        */
 
         button2 = findViewById(R.id.button2);
+        button10 = findViewById(R.id.button10);
         editText5 = findViewById(R.id.editText5);
         editText6 = findViewById(R.id.editText6);
         editText7 = findViewById(R.id.editText7);
         editText8 = findViewById(R.id.editText8);
         editText9 = findViewById(R.id.editText9);
+        member=new Member();
+        reff= FirebaseDatabase.getInstance().getReference().child("Member");
+
+
+        reff.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()){
+                    maxid=dataSnapshot.getChildrenCount();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+        button10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view10) {
+                Intent repeat=new Intent(getApplicationContext(),ActivityWork.class);
+                startActivity(repeat);
+            }
+        });
 
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,7 +121,15 @@ public class ActivityWork extends AppCompatActivity {
                 st7 = editText7.getText().toString();
                 st8 = editText8.getText().toString();
                 st9 = editText9.getText().toString();
-                SimpleDateFormat DT = new SimpleDateFormat("MM/dd/yyyy");
+
+                member.setName(st5);
+                member.setPh(st6);
+                member.setEmail(st7);
+                member.setAdd(st8);
+                member.setLang(st9);
+                reff.push().setValue(member);
+                Toast.makeText(ActivityWork.this,"data inserted successfully",Toast.LENGTH_LONG).show();
+                reff.child(String.valueOf(maxid+1)).setValue("member");
                 if(st5.length()==0)
                 {
                     editText5.setError("ENTER A VALID COMPANY NAME");
