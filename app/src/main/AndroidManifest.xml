@@ -7,7 +7,7 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="EasyRESUME"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -19,8 +19,9 @@
         <activity android:name=".AboutActivity" />
         <activity android:name=".ActivitySummary" />
         <activity android:name=".SkillsActivity" />
-        <activity android:name=".EducationActivity"
-            android:exported="true"/>
+        <activity
+            android:name=".EducationActivity"
+            android:exported="true" />
         <activity
             android:name=".ActivityWork"
             android:exported="true"
@@ -28,16 +29,22 @@
         <activity
             android:name=".SecondActivity"
             android:exported="true" />
+
         <activity
-            android:name=".MainActivity"
-            android:exported="true"
+            android:name=".SplashActivity"
+            android:theme="@android:style/Theme.Black.NoTitleBar"
             android:label="EasyRESUME">
             <intent-filter>
-                <action android:name="android.intent.action.SPLASH" />
+                <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    </application>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@android:style/Theme.Black.NoTitleBar">
+        </activity>
 
+    </application>
 </manifest>

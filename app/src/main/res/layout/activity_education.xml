@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/pkkk"
+    android:background="@drawable/back"
     tools:context=".EducationActivity">
 
     <TextView
@@ -26,21 +26,25 @@
         android:id="@+id/hr"
         android:layout_width="363dp"
         android:layout_height="5dp"
-        android:background="#444"
+        android:background="#ffffff"
         app:layout_constraintBottom_toTopOf="@+id/editText10"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6"
+
         app:layout_constraintVertical_bias="0.2"></TableRow>
 
     <EditText
         android:id="@+id/editText10"
         android:layout_width="334dp"
         android:layout_height="44dp"
+        android:background="#3EFCF2F2"
         android:ems="10"
         android:hint="Educational Degree/Standard"
         android:inputType="textPersonName"
+        android:singleLine="false"
+        android:textColor="#FDFCF7F7"
         android:textColorHint="#FAFFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -51,33 +55,37 @@
 
     <EditText
         android:id="@+id/editText11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="335dp"
+        android:layout_height="43dp"
+        android:background="#3EF5ECEC"
         android:ems="10"
         android:hint="Institute Name"
         android:inputType="textPersonName"
+        android:textColor="#FCFCF8F8"
         android:textColorHint="#FAFFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.146"
+        app:layout_constraintHorizontal_bias="0.337"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText10"
-        app:layout_constraintVertical_bias="0.078" />
+        app:layout_constraintVertical_bias="0.075" />
 
     <EditText
         android:id="@+id/editText12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="329dp"
+        android:layout_height="45dp"
+        android:background="#3CF5EEEE"
         android:ems="10"
         android:hint="Scored Marks"
         android:inputType="textPersonName"
+        android:textColor="#F8F3EEEE"
         android:textColorHint="#FAFFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.146"
+        app:layout_constraintHorizontal_bias="0.353"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText11"
-        app:layout_constraintVertical_bias="0.092" />
+        app:layout_constraintVertical_bias="0.101" />
 
     <Button
         android:id="@+id/button3"

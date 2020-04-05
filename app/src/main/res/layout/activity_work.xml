@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/pkkk"
+    android:background="@drawable/back"
     tools:context=".ActivityWork">
 
     <TextView
@@ -26,7 +26,7 @@
         android:id="@+id/hr"
         android:layout_width="363dp"
         android:layout_height="5dp"
-        android:background="#444"
+        android:background="#FAF7F7"
         app:layout_constraintBottom_toTopOf="@+id/editText5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,6 +37,7 @@
         android:id="@+id/editText5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="#32FFFFFF"
         android:ems="10"
         android:hint="Company Name"
         android:inputType="textPersonName"
@@ -52,6 +53,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
+        android:background="#28FFFFFF"
         android:ems="10"
         android:hint="From Date"
         android:inputType="date"
@@ -60,12 +62,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText8"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.038" />
 
     <EditText
         android:id="@+id/editText7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="#25FFFFFF"
         android:ems="10"
         android:hint="To Date"
         android:inputType="date"
@@ -74,7 +77,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText6"
-        app:layout_constraintVertical_bias="0.059" />
+        app:layout_constraintVertical_bias="0.115" />
 
     <Button
         android:id="@+id/button2"
@@ -96,6 +99,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
+        android:background="#27FFFFFF"
         android:ems="10"
         android:hint="Role"
         android:inputType="textPersonName"
@@ -104,22 +108,25 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText5"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.027" />
 
     <EditText
         android:id="@+id/editText9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="337dp"
+        android:layout_height="66dp"
+        android:background="#28FFFFFF"
         android:ems="10"
         android:gravity="start|top"
         android:hint="Position of Responsibility"
         android:inputType="textMultiLine"
+        android:paddingLeft="60sp"
+        android:paddingTop="20sp"
         android:textColorHint="#E2F8F4F4"
         app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText7"
-        app:layout_constraintVertical_bias="0.256" />
+        app:layout_constraintVertical_bias="0.315" />
 
     <Button
         android:id="@+id/button10"

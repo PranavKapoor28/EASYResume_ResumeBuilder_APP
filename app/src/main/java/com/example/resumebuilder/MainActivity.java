@@ -1,28 +1,22 @@
 package com.example.resumebuilder;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
     Button button6;
     Button button7;
     Button button8;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE); //will hide the title
-        getSupportActionBar().hide(); // hide the title bar
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN); //enable full screen
+
         setContentView(R.layout.activity_main);
-        Toast.makeText(MainActivity.this,"Firebase connection success",Toast.LENGTH_LONG).show();
+        Toast.makeText(MainActivity.this,"FireBase connection success",Toast.LENGTH_LONG).show();
 
         button6 = findViewById(R.id.button6);
         button7 = findViewById(R.id.button7);
