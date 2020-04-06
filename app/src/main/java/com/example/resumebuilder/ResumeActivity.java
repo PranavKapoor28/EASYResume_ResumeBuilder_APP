@@ -86,7 +86,7 @@ public class ResumeActivity extends AppCompatActivity {
             public void onClick(View v) {
 
 
-                Intent in = new Intent(getApplicationContext(), ActivityWork.class);
+                Intent in = new Intent(getApplicationContext(), SecondActivity.class);
 
                 st = editText.getText().toString();
                 st1 = editText1.getText().toString();
@@ -100,7 +100,7 @@ public class ResumeActivity extends AppCompatActivity {
                 member.setAdd(st3);
                 member.setLang(st4);
                 reff.push().setValue(member);
-                Toast.makeText(ResumeActivity.this,"data inserted sucessfully",Toast.LENGTH_LONG).show();
+                Toast.makeText(ResumeActivity.this,"data inserted successfully",Toast.LENGTH_LONG).show();
                 reff.child(String.valueOf(maxid+1)).setValue("member");
 
                 if(st.length()==0 || st.contains("(?=.*[0-9])+(?=.*[@#$%^&+=]) +(?=\\\\S+$)"))

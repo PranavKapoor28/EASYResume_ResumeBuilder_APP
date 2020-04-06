@@ -1,16 +1,19 @@
 package com.example.resumebuilder;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class SecondActivity extends AppCompatActivity {
 
@@ -82,46 +85,54 @@ public class SecondActivity extends AppCompatActivity {
         tv14 = findViewById(R.id.textView13);
         tv15 = findViewById(R.id.textView20);
         tv16 = findViewById(R.id.textView27);
+
+
         reff = FirebaseDatabase.getInstance().getReference().child("Member");
-
-
-
-
-        /*reff.addValueEventListener(new ValueEventListener() {
+        reff.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                st = dataSnapshot.child("name").getValue().toString();
-                st1 = dataSnapshot.child("ph").getValue().toString();
-                st2 = dataSnapshot.child("email").getValue().toString();
-                st3 = dataSnapshot.child("add").getValue().toString();
-                st4 = dataSnapshot.child("lang").getValue().toString();
-                tv.setText(st);
-                tv1.setText(st1);
-                tv2.setText(st2);
-                tv3.setText(st3);
-                tv4.setText(st4);
+                for(DataSnapshot postSnapShot:dataSnapshot.getChildren()) {
+
+                    Member member= postSnapShot.getValue(Member.class);
+                    st = member.getName();
+                    st1 = member.getPh();
+                    st2 = member.getEmail();
+                    st3 = member.getAdd();
+                    st4 = member.getLang();
+
+                    tv.setText(st);
+                    tv1.setText(st1);
+                    tv2.setText(st2);
+                    tv3.setText(st3);
+                    tv4.setText(st4);
+                }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
+                System.out.println("The read failed: " + databaseError.getMessage());
             }
-        });*/
+
+        });
+
+
+            /*
+
 
         Intent receiveIntent = getIntent();
 
 
-        st = receiveIntent.getStringExtra("Value");
-        st1 = receiveIntent.getStringExtra("Value1");
-        st2 = receiveIntent.getStringExtra("Value2");
-        st3 = receiveIntent.getStringExtra("Value3");
-        st4 = receiveIntent.getStringExtra("Value4");
-        st5 = receiveIntent.getStringExtra("Value5");
-        st6 = receiveIntent.getStringExtra("Value6");
-        st7 = receiveIntent.getStringExtra("Value7");
-        st8 = receiveIntent.getStringExtra("Value8");
-        st9 = receiveIntent.getStringExtra("Value9");
+        st   = receiveIntent.getStringExtra("Value");
+        st1  = receiveIntent.getStringExtra("Value1");
+        st2  = receiveIntent.getStringExtra("Value2");
+        st3  = receiveIntent.getStringExtra("Value3");M
+        st4  = receiveIntent.getStringExtra("Value4");
+        st5  = receiveIntent.getStringExtra("Value5");
+        st6  = receiveIntent.getStringExtra("Value6");
+        st7  = receiveIntent.getStringExtra("Value7");
+        st8  = receiveIntent.getStringExtra("Value8");
+        st9  = receiveIntent.getStringExtra("Value9");
         st10 = receiveIntent.getStringExtra("Value10");
         st11 = receiveIntent.getStringExtra("Value11");
         st12 = receiveIntent.getStringExtra("Value12");
@@ -131,13 +142,13 @@ public class SecondActivity extends AppCompatActivity {
         st16 = receiveIntent.getStringExtra("Value16");
 
 
-        /*st5=getIntent().getExtras().getString("Value5");
+        st5=getIntent().getExtras().getString("Value5");
         st6=getIntent().getExtras().getString("Value6");
         st7=getIntent().getExtras().getString("Value7");
         st8=getIntent().getExtras().getString("Value8");
         st9=getIntent().getExtras().getString("Value9");*/
 
-        tv.setText(st);
+       /* tv.setText(st);
         tv1.setText(st1);
         tv2.setText(st2);
         tv3.setText(st3);
@@ -153,7 +164,7 @@ public class SecondActivity extends AppCompatActivity {
         tv13.setText(st13);
         tv14.setText(st14);
         tv15.setText(st15);
-        tv16.setText(st16);
+        tv16.setText(st16);*/
 /*
 
         button9.setOnClickListener(new View.OnClickListener() {

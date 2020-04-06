@@ -1,53 +1,56 @@
 package com.example.resumebuilder;
 
 public class Member {
-private String Name;
-private String Ph;
-private String email;
-private String add;
-private String lang;
+public String st;
+public String st1;
+public String st2;
+public String st3;
+public String st4;
 
 
     public Member() {
     }
 
     public String getName() {
-        return Name;
+        return st;
     }
 
     public void setName(String name) {
-        Name = name;
+        st = name;
     }
 
     public String getPh() {
-        return Ph;
+        return st1;
     }
 
     public void setPh(String ph) {
-        Ph = ph;
+        st1 = ph;
     }
 
     public String getEmail() {
-        return email;
+        return st2;
     }
 
     public void setEmail(String email) {
-        this.email = email;
+
+        this.st2 = email;
     }
 
     public String getAdd() {
-        return add;
+        return st3;
     }
 
     public void setAdd(String add) {
-        this.add = add;
+
+        this.st3 = add;
     }
 
     public String getLang() {
-        return lang;
+        return st4;
     }
 
     public void setLang(String lang) {
-        this.lang = lang;
+
+        this.st4 = lang;
     }
 }
