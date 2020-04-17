@@ -1,5 +1,7 @@
 package com.example.resumebuilder;
 
+import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
@@ -8,16 +10,14 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.regex.Pattern;
 
@@ -37,6 +37,7 @@ public class ResumeActivity extends AppCompatActivity {
     EditText editText1;
     EditText editText;
     EditText editText2;
+    Context mContext;
     EditText editText4;
     EditText editText3;
     String st;
@@ -44,11 +45,16 @@ public class ResumeActivity extends AppCompatActivity {
     String st2;
     String st3;
     String st4;
+    ContentValues resume;
     DatabaseReference reff;
     Member member;
     long maxid=0;
+
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        mContext = getBaseContext();
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE); //will hide the title
         getSupportActionBar().hide(); // hide the title bar
@@ -63,7 +69,7 @@ public class ResumeActivity extends AppCompatActivity {
         editText2 = findViewById(R.id.editText2);
         editText3 = findViewById(R.id.editText3);
         editText4 = findViewById(R.id.editText4);
-        member=new Member();
+       /* member=new Member();
         reff= FirebaseDatabase.getInstance().getReference().child("Member");
 
 
@@ -79,14 +85,20 @@ public class ResumeActivity extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
-        });
+        });*/
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
                 Intent in = new Intent(getApplicationContext(), SecondActivity.class);
+
+
+
+                editText = findViewById(R.id.editText);
+                editText1 = findViewById(R.id.editText1);
+                editText2 = findViewById(R.id.editText2);
+                editText3 = findViewById(R.id.editText3);
+                editText4 = findViewById(R.id.editText4);
 
                 st = editText.getText().toString();
                 st1 = editText1.getText().toString();
@@ -94,6 +106,27 @@ public class ResumeActivity extends AppCompatActivity {
                 st3 = editText3.getText().toString();
                 st4 = editText4.getText().toString();
 
+                    JSONArray jArr = new JSONArray();
+              JSONObject post_dict = new JSONObject();
+
+        try {
+            post_dict.put("Value" , st);
+            post_dict.put("Value1", st1);
+            post_dict.put("Value2", st2);
+            post_dict.put("Value3", st3);
+            post_dict.put("Value4", st4);
+
+            jArr.put(post_dict);
+
+        }
+        catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+
+
+
+/*
                 member.setName(st);
                 member.setPh(st1);
                 member.setEmail(st2);
@@ -101,7 +134,8 @@ public class ResumeActivity extends AppCompatActivity {
                 member.setLang(st4);
                 reff.push().setValue(member);
                 Toast.makeText(ResumeActivity.this,"data inserted successfully",Toast.LENGTH_LONG).show();
-                reff.child(String.valueOf(maxid+1)).setValue("member");
+                reff.child(String.valueOf(maxid+1)).setValue("member");*/
+
 
                 if(st.length()==0 || st.contains("(?=.*[0-9])+(?=.*[@#$%^&+=]) +(?=\\\\S+$)"))
                 {
@@ -126,36 +160,21 @@ public class ResumeActivity extends AppCompatActivity {
                     editText4.setError("ENTER A VALID LANGUAGE");
                     return;
                 }
-
-                in.putExtra("Value", st);
+/*
+              in.putExtra("Value", st);
                 in.putExtra("Value1", st1);
                 in.putExtra("Value2", st2);
                 in.putExtra("Value3", st3);
                 in.putExtra("Value4", st4);
+
+*/
                 startActivity(in);
 
-               /*Intent i=new Intent(MainActivity.this,SecondActivity.class);
-
-
-                st=editText.getText().toString();
-                st1=editText1.getText().toString();
-                st2=editText2.getText().toString();
-                st3=editText3.getText().toString();
-                st4=editText4.getText().toString();
-                i.putExtra("Value",st);
-                i.putExtra("Value1",st1);
-                i.putExtra("Value2",st2);
-                i.putExtra("Value3",st3);
-
-
-                startActivity(i);
-                finish();*/
             }
         });
 
 
     }
 
+
 }
-
-

@@ -9,6 +9,15 @@ public String st4;
 
 
     public Member() {
+
+    }
+
+    public Member(String name, String ph,String email, String add, String lang) {
+        st = name;
+        st1 = ph;
+        st2 = email;
+        st3 = add;
+        st4 = lang;
     }
 
     public String getName() {

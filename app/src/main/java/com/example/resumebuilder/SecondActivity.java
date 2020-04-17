@@ -1,19 +1,17 @@
 package com.example.resumebuilder;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
+import android.database.sqlite.SQLiteDatabase;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+
 
 public class SecondActivity extends AppCompatActivity {
 
@@ -54,6 +52,7 @@ public class SecondActivity extends AppCompatActivity {
     String st13;
     String st14;
     String st15;
+    SQLiteDatabase database;
     DatabaseReference reff;
     Button button9;
 
@@ -87,46 +86,37 @@ public class SecondActivity extends AppCompatActivity {
         tv16 = findViewById(R.id.textView27);
 
 
-        reff = FirebaseDatabase.getInstance().getReference().child("Member");
+
+       /* reff = FirebaseDatabase.getInstance().getReference().child("Member");
         reff.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                for(DataSnapshot postSnapShot:dataSnapshot.getChildren()) {
-
-                    Member member= postSnapShot.getValue(Member.class);
-                    st = member.getName();
+                for(DataSnapshot postSnapShot : dataSnapshot.getChildren()){
+                    Member member=postSnapShot.getValue(Member.class);
+                    st =  member.getName();
                     st1 = member.getPh();
                     st2 = member.getEmail();
                     st3 = member.getAdd();
                     st4 = member.getLang();
-
-                    tv.setText(st);
-                    tv1.setText(st1);
-                    tv2.setText(st2);
-                    tv3.setText(st3);
-                    tv4.setText(st4);
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                System.out.println("The read failed: " + databaseError.getMessage());
+
+                System.out.println("The read failed: "+ databaseError.getMessage());
+
             }
-
-        });
-
-
-            /*
+        });*/
 
 
-        Intent receiveIntent = getIntent();
+        Intent receiveIntent=getIntent();
 
-
+        Bundle extras=receiveIntent.getExtras();
         st   = receiveIntent.getStringExtra("Value");
         st1  = receiveIntent.getStringExtra("Value1");
         st2  = receiveIntent.getStringExtra("Value2");
-        st3  = receiveIntent.getStringExtra("Value3");M
+        st3  = receiveIntent.getStringExtra("Value3");
         st4  = receiveIntent.getStringExtra("Value4");
         st5  = receiveIntent.getStringExtra("Value5");
         st6  = receiveIntent.getStringExtra("Value6");
@@ -142,13 +132,9 @@ public class SecondActivity extends AppCompatActivity {
         st16 = receiveIntent.getStringExtra("Value16");
 
 
-        st5=getIntent().getExtras().getString("Value5");
-        st6=getIntent().getExtras().getString("Value6");
-        st7=getIntent().getExtras().getString("Value7");
-        st8=getIntent().getExtras().getString("Value8");
-        st9=getIntent().getExtras().getString("Value9");*/
 
-       /* tv.setText(st);
+
+        tv.setText(st);
         tv1.setText(st1);
         tv2.setText(st2);
         tv3.setText(st3);
@@ -164,9 +150,8 @@ public class SecondActivity extends AppCompatActivity {
         tv13.setText(st13);
         tv14.setText(st14);
         tv15.setText(st15);
-        tv16.setText(st16);*/
+        tv16.setText(st16);
 /*
-
         button9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -184,12 +169,8 @@ public class SecondActivity extends AppCompatActivity {
            }
             }
         });
-
-
     }
-
     private void savePdf(){
-
         Document mdoc=new Document();
         String mFileName= new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault()).format(System.currentTimeMillis());
 String mFilePath= Environment.getExternalStorageDirectory() + "/" + mFileName + ".pdf";
@@ -203,9 +184,7 @@ String mFilePath= Environment.getExternalStorageDirectory() + "/" + mFileName + 
  catch (Exception e){
      Toast.makeText(this,e.getMessage(),Toast.LENGTH_SHORT).show();
  }
-
     }
-
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         switch (requestCode){
@@ -218,8 +197,6 @@ String mFilePath= Environment.getExternalStorageDirectory() + "/" + mFileName + 
                 }
             }
         }
-
-
     }*/
     }
 }

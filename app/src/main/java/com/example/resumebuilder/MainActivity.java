@@ -11,6 +11,7 @@ public class MainActivity extends Activity {
     Button button6;
     Button button7;
     Button button8;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +22,7 @@ public class MainActivity extends Activity {
         button6 = findViewById(R.id.button6);
         button7 = findViewById(R.id.button7);
         button8 = findViewById(R.id.button8);
+
 
         button6.setOnClickListener(new View.OnClickListener() {
             @Override
