@@ -1,8 +1,8 @@
 package com.example.resumebuilder;
 
-import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
@@ -13,55 +13,34 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.firebase.database.DatabaseReference;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.regex.Pattern;
+import com.example.resumebuilder.model.ResumeData;
 
 public class ResumeActivity extends AppCompatActivity {
-
-    private static final Pattern PHONE_NUMBER =
-            Pattern.compile("^" +
-                    //"(?=.*[0-9])" +         //at least 1 digit
-                    //"(?=.*[a-z])" +         //at least 1 lower case letter
-                    //"(?=.*[A-Z])" +         //at least 1 upper case letter
-                    "(?=.*[a-zA-Z])" +      //any letter
-                    "(?=.*[@#$%^&+=])" +    //at least 1 special character
-                    "(?=\\S+$)" +           //no white spaces
-                    ".{5,}" +               //at least 4 characters
-                    "$");
     Button button;
-    EditText editText1;
-    EditText editText;
-    EditText editText2;
     Context mContext;
-    EditText editText4;
-    EditText editText3;
-    String st;
-    String st1;
-    String st2;
-    String st3;
-    String st4;
-    ContentValues resume;
-    DatabaseReference reff;
-    Member member;
-    long maxid=0;
 
-
+    EditText editText = findViewById(R.id.editText);
+    EditText editText1 = findViewById(R.id.editText1);
+    EditText editText2 = findViewById(R.id.editText2);
+    EditText editText4 = findViewById(R.id.editText3);
+    EditText editText3 = findViewById(R.id.editText4);
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         mContext = getBaseContext();
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE); //will hide the title
-        getSupportActionBar().hide(); // hide the title bar
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN); //enable full screen
-        setContentView(R.layout.activity_resume);
 
+        //will hide the title
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+        // hide the title bar
+        getSupportActionBar().hide();
+
+        //enable full screen
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        setContentView(R.layout.activity_resume);
 
         button = findViewById(R.id.button);
         editText = findViewById(R.id.editText);
@@ -69,112 +48,58 @@ public class ResumeActivity extends AppCompatActivity {
         editText2 = findViewById(R.id.editText2);
         editText3 = findViewById(R.id.editText3);
         editText4 = findViewById(R.id.editText4);
-       /* member=new Member();
-        reff= FirebaseDatabase.getInstance().getReference().child("Member");
-
-
-        reff.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if (dataSnapshot.exists()){
-                    maxid=dataSnapshot.getChildrenCount();
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });*/
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent in = new Intent(getApplicationContext(), SecondActivity.class);
+                ResumeData resume = new ResumeData();
 
+                resume.setName(editText.getText().toString());
+                resume.setPhone(editText1.getText().toString());
+                resume.setEmail(editText2.getText().toString());
+                resume.setAddress(editText3.getText().toString());
+                resume.setLanguage(editText4.getText().toString());
 
+                validateInput(resume);
 
-                editText = findViewById(R.id.editText);
-                editText1 = findViewById(R.id.editText1);
-                editText2 = findViewById(R.id.editText2);
-                editText3 = findViewById(R.id.editText3);
-                editText4 = findViewById(R.id.editText4);
+                writeToSharedPreferences(resume.getName(), resume.toString());
 
-                st = editText.getText().toString();
-                st1 = editText1.getText().toString();
-                st2 = editText2.getText().toString();
-                st3 = editText3.getText().toString();
-                st4 = editText4.getText().toString();
-
-                    JSONArray jArr = new JSONArray();
-              JSONObject post_dict = new JSONObject();
-
-        try {
-            post_dict.put("Value" , st);
-            post_dict.put("Value1", st1);
-            post_dict.put("Value2", st2);
-            post_dict.put("Value3", st3);
-            post_dict.put("Value4", st4);
-
-            jArr.put(post_dict);
-
-        }
-        catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-
-
-
-/*
-                member.setName(st);
-                member.setPh(st1);
-                member.setEmail(st2);
-                member.setAdd(st3);
-                member.setLang(st4);
-                reff.push().setValue(member);
-                Toast.makeText(ResumeActivity.this,"data inserted successfully",Toast.LENGTH_LONG).show();
-                reff.child(String.valueOf(maxid+1)).setValue("member");*/
-
-
-                if(st.length()==0 || st.contains("(?=.*[0-9])+(?=.*[@#$%^&+=]) +(?=\\\\S+$)"))
-                {
-                    editText.setError("ENTER A VALID NAME");
-                    return;
-                }
-
-                if(!Patterns.PHONE.matcher(st1).matches()){
-                    editText1.setError("ENTER A VALID PHONE NUMBER");
-                    return;
-                }
-                if(!Patterns.EMAIL_ADDRESS.matcher(st2).matches()){
-                    editText2.setError("ENTER A VALID EMAIL ADDRESS");
-                    return;
-                }
-                if(st3.isEmpty())
-                {
-                    editText3.setError("ENTER A VALID ADDRESS");
-                    return;
-                }
-                if (st4.isEmpty()){
-                    editText4.setError("ENTER A VALID LANGUAGE");
-                    return;
-                }
-/*
-              in.putExtra("Value", st);
-                in.putExtra("Value1", st1);
-                in.putExtra("Value2", st2);
-                in.putExtra("Value3", st3);
-                in.putExtra("Value4", st4);
-
-*/
-                startActivity(in);
-
+                startActivity(new Intent(getApplicationContext(), SecondActivity.class));
             }
         });
-
-
     }
 
+    public void writeToSharedPreferences(String key, String value) {
+        SharedPreferences sharedPref = mContext.getSharedPreferences("ResumeData", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
 
+        editor.putString(key, value);
+        editor.commit();
+    }
+
+    public void validateInput(ResumeData resume) {
+        if(resume.getName().length()==0 || resume.getName().contains("(?=.*[0-9])+(?=.*[@#$%^&+=]) +(?=\\\\S+$)"))
+        {
+            editText.setError("ENTER A VALID NAME");
+            return;
+        }
+
+        if(!Patterns.PHONE.matcher(resume.getPhone()).matches()){
+            editText1.setError("ENTER A VALID PHONE NUMBER");
+            return;
+        }
+        if(!Patterns.EMAIL_ADDRESS.matcher(resume.getEmail()).matches()){
+            editText2.setError("ENTER A VALID EMAIL ADDRESS");
+            return;
+        }
+        if(resume.getAddress().isEmpty())
+        {
+            editText3.setError("ENTER A VALID ADDRESS");
+            return;
+        }
+        if (resume.getLanguage().isEmpty()){
+            editText4.setError("ENTER A VALID LANGUAGE");
+            return;
+        }
+    }
 }
