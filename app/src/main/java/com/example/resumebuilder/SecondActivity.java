@@ -4,13 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.TextView;
-import android.database.sqlite.SQLiteDatabase;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.google.firebase.database.DatabaseReference;
 
 
 public class SecondActivity extends AppCompatActivity {
@@ -52,10 +48,6 @@ public class SecondActivity extends AppCompatActivity {
     String st13;
     String st14;
     String st15;
-    SQLiteDatabase database;
-    DatabaseReference reff;
-    Button button9;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,31 +77,6 @@ public class SecondActivity extends AppCompatActivity {
         tv15 = findViewById(R.id.textView20);
         tv16 = findViewById(R.id.textView27);
 
-
-
-       /* reff = FirebaseDatabase.getInstance().getReference().child("Member");
-        reff.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for(DataSnapshot postSnapShot : dataSnapshot.getChildren()){
-                    Member member=postSnapShot.getValue(Member.class);
-                    st =  member.getName();
-                    st1 = member.getPh();
-                    st2 = member.getEmail();
-                    st3 = member.getAdd();
-                    st4 = member.getLang();
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                System.out.println("The read failed: "+ databaseError.getMessage());
-
-            }
-        });*/
-
-
         Intent receiveIntent=getIntent();
 
         Bundle extras=receiveIntent.getExtras();
@@ -131,9 +98,6 @@ public class SecondActivity extends AppCompatActivity {
         st15 = receiveIntent.getStringExtra("Value15");
         st16 = receiveIntent.getStringExtra("Value16");
 
-
-
-
         tv.setText(st);
         tv1.setText(st1);
         tv2.setText(st2);
@@ -151,52 +115,5 @@ public class SecondActivity extends AppCompatActivity {
         tv14.setText(st14);
         tv15.setText(st15);
         tv16.setText(st16);
-/*
-        button9.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-           if(Build.VERSION.SDK_INT>Build.VERSION_CODES.M){
-               if(checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)== PackageManager.PERMISSION_DENIED){
-                   String[] permissions ={Manifest.permission.WRITE_EXTERNAL_STORAGE};
-                   requestPermissions(permissions,STORAGE_CODE);
-               }
-               else {
-                savePdf();
-               }
-           }
-           else{
-                savePdf();
-           }
-            }
-        });
-    }
-    private void savePdf(){
-        Document mdoc=new Document();
-        String mFileName= new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault()).format(System.currentTimeMillis());
-String mFilePath= Environment.getExternalStorageDirectory() + "/" + mFileName + ".pdf";
- try {
-     PdfWriter.getInstance(mdoc,new FileOutputStream(mFilePath));
-     mdoc.open();
-     mdoc.add(new Paragraph(st));
-     mdoc.close();
-     Toast.makeText(this,mFileName+".pdf\nis saved to\n",Toast.LENGTH_SHORT).show();
- }
- catch (Exception e){
-     Toast.makeText(this,e.getMessage(),Toast.LENGTH_SHORT).show();
- }
-    }
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        switch (requestCode){
-            case STORAGE_CODE:{
-                if (grantResults.length>0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
-                    savePdf();
-                }
-                else{
-                    Toast.makeText(this,"Permission denied",Toast.LENGTH_SHORT).show();
-                }
-            }
-        }
-    }*/
     }
 }

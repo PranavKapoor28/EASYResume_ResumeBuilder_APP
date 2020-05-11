@@ -7,16 +7,12 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 public class EducationActivity extends AppCompatActivity {
 
@@ -39,7 +35,8 @@ public class EducationActivity extends AppCompatActivity {
     String st11;
     String st12;
     DatabaseReference reff;
-    Member member;
+    ArrayList<String> SampleArrayList = new ArrayList<String>();
+    ResumeModel resume;
     long maxid=0;
 
 
@@ -57,7 +54,7 @@ public class EducationActivity extends AppCompatActivity {
         editText10 = findViewById(R.id.editText10);
         editText11 = findViewById(R.id.editText11);
         editText12 = findViewById(R.id.editText12);
-        member=new Member();
+      /*  member=new Member();
         reff= FirebaseDatabase.getInstance().getReference().child("Member");
 
 
@@ -73,14 +70,17 @@ public class EducationActivity extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
-        });
+        });*/
 
 
         button11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view11) {
-                Intent repeat1=new Intent(getApplicationContext(),EducationActivity.class);
-                startActivity(repeat1);
+
+                editText10.setText("");
+                editText11.setText("");
+                editText12.setText("");
+
             }
         });
 
@@ -108,13 +108,7 @@ public class EducationActivity extends AppCompatActivity {
                 st10 = editText10.getText().toString();
                 st11 = editText11.getText().toString();
                 st12= editText12.getText().toString();
-                member.setName(st10);
-                member.setPh(st11);
-                member.setEmail(st12);
 
-                reff.push().setValue(member);
-                Toast.makeText(EducationActivity.this,"data inserted successfully",Toast.LENGTH_LONG).show();
-                reff.child(String.valueOf(maxid+1)).setValue("member");
 
                 if(st10.length()==0)
                 {

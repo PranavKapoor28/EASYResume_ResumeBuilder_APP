@@ -7,7 +7,6 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -39,7 +38,7 @@ public class ActivityWork extends AppCompatActivity {
     String st8;
     String st9;
     DatabaseReference reff;
-    Member member;
+    ResumeModel resume;
     long maxid=0;
 
 
@@ -72,7 +71,7 @@ public class ActivityWork extends AppCompatActivity {
         editText7 = findViewById(R.id.editText7);
         editText8 = findViewById(R.id.editText8);
         editText9 = findViewById(R.id.editText9);
-        member=new Member();
+        resume=new ResumeModel();
         reff= FirebaseDatabase.getInstance().getReference().child("Member");
 
 
@@ -122,14 +121,13 @@ public class ActivityWork extends AppCompatActivity {
                 st8 = editText8.getText().toString();
                 st9 = editText9.getText().toString();
 
-                member.setName(st5);
-                member.setPh(st6);
-                member.setEmail(st7);
-                member.setAdd(st8);
-                member.setLang(st9);
-                reff.push().setValue(member);
-                Toast.makeText(ActivityWork.this,"data inserted successfully",Toast.LENGTH_LONG).show();
-                reff.child(String.valueOf(maxid+1)).setValue("member");
+                resume.setName(st5);
+                resume.setPhone(st6);
+                resume.setEmail(st7);
+                resume.setAddress(st8);
+                resume.setLanguage(st9);
+
+
                 if(st5.length()==0)
                 {
                     editText5.setError("ENTER A VALID COMPANY NAME");

@@ -35,8 +35,8 @@
 
     <EditText
         android:id="@+id/editText5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="270dp"
+        android:layout_height="35dp"
         android:background="#32FFFFFF"
         android:ems="10"
         android:hint="Company Name"
@@ -51,8 +51,8 @@
 
     <EditText
         android:id="@+id/editText6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="263dp"
+        android:layout_height="33dp"
         android:layout_marginTop="24dp"
         android:background="#28FFFFFF"
         android:ems="10"
@@ -68,8 +68,8 @@
 
     <EditText
         android:id="@+id/editText7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="262dp"
+        android:layout_height="33dp"
         android:background="#25FFFFFF"
         android:ems="10"
         android:hint="To Date"
@@ -84,23 +84,23 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="270dp"
-        android:layout_height="54dp"
+        android:layout_width="263dp"
+        android:layout_height="52dp"
         android:background="#F5ADF048"
         android:text="Next : Educational Background"
         android:textSize="18sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.467"
+        app:layout_constraintHorizontal_bias="0.475"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText7"
-        app:layout_constraintVertical_bias="0.487" />
+        app:layout_constraintVertical_bias="0.58" />
 
     <EditText
         android:id="@+id/editText8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="266dp"
+        android:layout_height="33dp"
         android:layout_marginTop="24dp"
         android:background="#27FFFFFF"
         android:ems="10"
@@ -116,8 +116,8 @@
 
     <EditText
         android:id="@+id/editText9"
-        android:layout_width="337dp"
-        android:layout_height="66dp"
+        android:layout_width="334dp"
+        android:layout_height="65dp"
         android:background="#28FFFFFF"
         android:ems="10"
         android:gravity="start|top"
@@ -129,14 +129,15 @@
         android:textColorHint="#E2F8F4F4"
         app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.532"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText7"
-        app:layout_constraintVertical_bias="0.315" />
+        app:layout_constraintVertical_bias="0.552" />
 
     <Button
         android:id="@+id/button10"
-        android:layout_width="268dp"
-        android:layout_height="51dp"
+        android:layout_width="262dp"
+        android:layout_height="46dp"
         android:background="#D7F53737"
         android:text="Add another Work experience"
         android:textSize="18sp"

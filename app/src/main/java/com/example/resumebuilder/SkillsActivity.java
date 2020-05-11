@@ -40,7 +40,7 @@ public class SkillsActivity extends AppCompatActivity {
     String st14;
     String st15;
     DatabaseReference reff;
-    Member member;
+    ResumeModel resume;
     long maxid=0;
 
     @Override
@@ -56,7 +56,7 @@ public class SkillsActivity extends AppCompatActivity {
         editText13 = findViewById(R.id.editText13);
         editText14 = findViewById(R.id.editText14);
         editText15 = findViewById(R.id.editText15);
-        member=new Member();
+        resume=new ResumeModel();
         reff= FirebaseDatabase.getInstance().getReference().child("Member");
 
 
@@ -103,10 +103,7 @@ public class SkillsActivity extends AppCompatActivity {
                 st14 = editText14.getText().toString();
                 st15= editText15.getText().toString();
 
-                member.setName(st13);
-                member.setPh(st14);
-                member.setEmail(st15);
-                reff.push().setValue(member);
+
                 Toast.makeText(SkillsActivity.this,"data inserted successfully",Toast.LENGTH_LONG).show();
                 reff.child(String.valueOf(maxid+1)).setValue("member");
 

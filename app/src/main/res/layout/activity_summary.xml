@@ -9,8 +9,8 @@
 
     <EditText
         android:id="@+id/editText16"
-        android:layout_width="354dp"
-        android:layout_height="68dp"
+        android:layout_width="376dp"
+        android:layout_height="156dp"
         android:background="#4DEEE7E7"
         android:ems="10"
         android:gravity="start|top"
@@ -18,10 +18,10 @@
         android:textColor="#F5E9E9"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.315"
+        app:layout_constraintHorizontal_bias="0.531"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView12"
-        app:layout_constraintVertical_bias="0.064" />
+        app:layout_constraintVertical_bias="0.072" />
 
     <TextView
         android:id="@+id/textView11"
@@ -52,6 +52,7 @@
         android:id="@+id/textView12"
         android:layout_width="364dp"
         android:layout_height="72dp"
+        android:gravity="center"
         android:text="Describe Yourself As A Professional Enthusiast"
         android:textColor="#F8FAF8F8"
         android:textSize="24sp"
