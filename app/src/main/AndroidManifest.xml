@@ -11,15 +11,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity android:name=".Work3Activity"></activity>
+        <activity android:name=".Work2Activity" />
+        <activity android:name=".Education3Activity" />
+        <activity
+            android:name=".Education2Activity"
+            android:exported="true" />
+        <activity android:name=".HomePageActivity" />
         <activity
             android:name=".ResumeActivity"
             android:exported="true"
             android:label="EasyRESUME" />
         <activity android:name=".ContactResume" />
         <activity android:name=".AboutActivity" />
-        <activity android:name=".ActivitySummary" />
-        <activity android:name=".SkillsActivity" />
+        <activity
+            android:name=".ActivitySummary"
+            android:exported="true" />
+        <activity
+            android:name=".SkillsActivity"
+            android:exported="true" />
         <activity
             android:name=".EducationActivity"
             android:exported="true" />
@@ -32,8 +42,7 @@
             android:exported="true" />
         <activity
             android:name=".SplashActivity"
-            android:label="EasyRESUME"
-            android:theme="@android:style/Theme.Black.NoTitleBar">
+            android:label="EasyRESUME">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -42,8 +51,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true"
-            android:theme="@android:style/Theme.Black.NoTitleBar"></activity>
+            android:exported="true" />
     </application>
 
 </manifest>

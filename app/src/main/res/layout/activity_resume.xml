@@ -4,14 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/back"
+    android:background="#EE000000"
     android:orientation="vertical">
-
+    tools:context="net.simplifiedcoding.androidvalidationexample.MainActivity">
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="374dp"
         android:layout_height="56dp"
+        android:gravity="center"
         android:text="ADD PERSONAL INFORMATION"
         android:textColor="#FAF7F1F1"
         android:textSize="24sp"
@@ -36,10 +37,11 @@
 
     <EditText
         android:id="@+id/editText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#34F8F4F4"
+        android:layout_width="293dp"
+        android:layout_height="37dp"
+        android:background="#7AFBF5F5"
         android:ems="10"
+        android:gravity="center"
         android:hint="Name"
         android:inputType="textPersonName"
         android:textColor="#F7FCF2F2"
@@ -52,10 +54,11 @@
 
     <EditText
         android:id="@+id/editText3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#2FF5EAEA"
+        android:layout_width="293dp"
+        android:layout_height="37dp"
+        android:background="#6FF5EAEA"
         android:ems="10"
+        android:gravity="center"
         android:hint="Address"
         android:inputType="textPostalAddress"
         android:textColor="#FFFCFC"
@@ -68,11 +71,12 @@
 
     <EditText
         android:id="@+id/editText4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="293dp"
+        android:layout_height="37dp"
         android:layout_marginTop="52dp"
-        android:background="#34FFFFFF"
+        android:background="#6AFFFFFF"
         android:ems="10"
+        android:gravity="center"
         android:hint="Languages Known"
         android:inputType="textPersonName"
         android:textColor="#FDFCF7F7"
@@ -85,11 +89,12 @@
 
     <EditText
         android:id="@+id/editText1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="293dp"
+        android:layout_height="37dp"
         android:layout_marginTop="48dp"
-        android:background="#39EEE4E4"
+        android:background="#6FEEE4E4"
         android:ems="10"
+        android:gravity="center"
         android:hint="Phone number"
         android:inputType="phone"
         android:textColor="#FCF6F6"
@@ -102,11 +107,12 @@
 
     <EditText
         android:id="@+id/editText2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="293dp"
+        android:layout_height="37dp"
         android:layout_marginTop="48dp"
-        android:background="#37F5EEEE"
+        android:background="#6FFDFAFA"
         android:ems="10"
+        android:gravity="center"
         android:hint="E-Mail"
         android:inputType="textEmailAddress"
         android:textColor="#F8FCF5F5"
@@ -119,17 +125,16 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="231dp"
-        android:layout_height="54dp"
-        android:background="#FA88E760"
+        android:layout_width="284dp"
+        android:layout_height="50dp"
+        android:background="@drawable/buttonsubmit"
         android:hint="Button"
-        android:text="Next: Work Experience"
+        android:text="SAVE"
         android:textSize="18sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText4"
-        app:layout_constraintVertical_bias="0.765" />
+        app:layout_constraintTop_toBottomOf="@+id/editText4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

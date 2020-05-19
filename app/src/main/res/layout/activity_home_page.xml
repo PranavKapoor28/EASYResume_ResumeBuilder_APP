@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView43"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="42sp"
+        android:text="EASYRESUME"
+        android:textColor="#FDFBFB"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/button11"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30sp"
+        android:background="@color/background_light"
+        app:layout_constraintBottom_toTopOf="@+id/divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView43" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20sp"
+        android:layout_marginBottom="60sp"
+        android:background="@color/background_light"
+        app:layout_constraintBottom_toTopOf="@+id/button11"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView43" />
+
+    <LinearLayout
+        android:id="@+id/list1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/listcolour"
+        android:elevation="22sp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/milkimage"
+            android:layout_width="80dp"
+            android:layout_height="55dp"
+            android:padding="5dp"
+            app:srcCompat="@drawable/ic_person_black_24dp" />
+
+        <TextView
+            android:id="@+id/milk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:paddingLeft="15dp"
+            android:text="Personal Information"
+            android:textColor="#FAD35B"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#FFFFFF"></View>
+
+    <LinearLayout
+        android:id="@+id/list2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/listcolour"
+        android:elevation="22sp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/riceImage"
+            android:layout_width="80dp"
+            android:layout_height="55dp"
+            android:padding="5dp"
+            app:srcCompat="@drawable/ic_school_black_24dp" />
+
+        <TextView
+            android:id="@+id/rice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:paddingLeft="15dp"
+            android:text="Educational Information"
+            android:textColor="#FAD35B"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#FFFFFF"
+        android:elevation="22sp"></View>
+
+    <LinearLayout
+        android:id="@+id/list3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/listcolour"
+        android:elevation="22sp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/nutsImage"
+            android:layout_width="80dp"
+            android:layout_height="55dp"
+            android:padding="5dp"
+            app:srcCompat="@drawable/ic_work_black_24dp" />
+
+        <TextView
+            android:id="@+id/Nuts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:paddingLeft="15dp"
+            android:text="Work Experience"
+            android:textColor="#FAD35B"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#FFFFFF"></View>
+
+    <LinearLayout
+        android:id="@+id/list4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/listcolour"
+        android:elevation="22sp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/meatImage"
+            android:layout_width="80dp"
+            android:layout_height="55dp"
+            android:padding="5dp"
+            app:srcCompat="@drawable/ic_computer_black_24dp" />
+
+        <TextView
+            android:id="@+id/RedMeats"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:paddingLeft="15dp"
+            android:text="Skills"
+            android:textColor="#FAD35B"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#FFFFFF"
+        android:elevation="22sp"></View>
+
+    <LinearLayout
+        android:id="@+id/list5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/listcolour"
+        android:elevation="22sp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/PotatoeImage"
+            android:layout_width="80dp"
+            android:layout_height="55dp"
+            android:padding="5dp"
+            app:srcCompat="@drawable/ic_public_black_24dp" />
+
+        <TextView
+            android:id="@+id/potatoes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:paddingLeft="15dp"
+            android:text="Professional Summary"
+            android:textColor="#FAD35B"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#FFFFFF"></View>
+
+    <LinearLayout
+        android:id="@+id/list6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/listcolour"
+        android:elevation="22sp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/driedImage"
+            android:layout_width="80dp"
+            android:layout_height="55dp"
+            android:padding="5dp"
+            app:srcCompat="@drawable/ic_assignment_ind_black_24dp" />
+
+        <TextView
+            android:id="@+id/DriedFruits"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:paddingLeft="15dp"
+            android:text="View Your Resume"
+            android:textColor="#FAD35B"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#FFFFFF"></View>
+
+</LinearLayout>

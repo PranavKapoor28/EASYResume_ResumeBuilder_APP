@@ -1,95 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/back">
+    android:background="#000000"
+>
 
-    <Button
-        android:id="@+id/button8"
-        android:layout_width="118dp"
-        android:layout_height="102dp"
-        android:layout_marginTop="8dp"
-        android:background="#45F8D4"
-        android:text="CONTACT"
-        android:textSize="18sp"
-        android:textStyle="bold"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/layout"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.862" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="120dp"
-        android:layout_height="108dp"
-        android:background="#C4F77E"
-        android:text="CREATE RESUME"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/button7"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.896" />
+        <Button
+            android:id="@+id/button8"
+            android:layout_width="301dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/buttonsubmit"
+            android:text="CONTACT"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:elevation="20sp"
+            app:layout_constraintHorizontal_bias="0.536"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.775" />
 
-    <Button
-        android:id="@+id/button7"
-        android:layout_width="118dp"
-        android:layout_height="103dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="#FCF6FD05"
-        android:text="ABOUT"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/button8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.945" />
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="304dp"
+            android:layout_height="45dp"
+            android:background="@drawable/buttonsubmit"
+            android:text="CREATE RESUME"
+            android:textSize="20sp"
+            android:elevation="20dp"
 
-    <TextView
-        android:id="@+id/textView31"
-        android:layout_width="249dp"
-        android:layout_height="47dp"
-        android:text="EasyRESUME"
-        android:textColor="#FC49FD08"
-        android:textSize="36sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/button7"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.598"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.148" />
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/button7"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.523"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.929" />
 
-    <TableRow
-        android:id="@+id/hr"
-        android:layout_width="363dp"
-        android:layout_height="5dp"
-        android:background="#ffffff"
-        app:layout_constraintBottom_toTopOf="@+id/textView35"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView31"
-        app:layout_constraintVertical_bias="0.235"></TableRow>
+        <Button
+            android:id="@+id/button7"
+            android:layout_width="303dp"
+            android:layout_height="47dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/buttonsubmit"
+            android:text="ABOUT"
+            android:elevation="20sp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/button8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.546"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.949" />
 
-    <TextView
-        android:id="@+id/textView35"
-        android:layout_width="349dp"
-        android:layout_height="29dp"
-        android:text="CREATE YOUR RESUME IN MINUTES"
-        android:textColor="#64F82E"
-        android:textSize="21sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintBottom_toTopOf="@+id/button6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView31"
-        app:layout_constraintVertical_bias="0.32" />
+        <TextView
+            android:id="@+id/textView31"
+            android:layout_width="249dp"
+            android:layout_height="47dp"
+            android:text="EasyRESUME"
+            android:textColor="#FCFDFDFC"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/button7"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.638"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.221" />
+
+        <TableRow
+            android:id="@+id/hr"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="#ffffff"
+            android:gravity="center"
+            app:layout_constraintBottom_toTopOf="@+id/textView35"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView31"
+            app:layout_constraintVertical_bias="0.235"></TableRow>
+
+        <TextView
+            android:id="@+id/textView35"
+            android:layout_width="349dp"
+            android:layout_height="29dp"
+            android:gravity="center"
+            android:text="Resume In Your Pocket !!!"
+            android:textColor="#FAFCF9"
+            android:textSize="21sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/button6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.636"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView31"
+            app:layout_constraintVertical_bias="0.181" />
+
+        <Button
+            android:id="@+id/button9"
+            android:layout_width="254dp"
+            android:layout_height="51dp"
+            android:background="@drawable/deletebutton"
+            android:text="Delete your Resume"
+            android:textColor="#FAF6F6"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:elevation="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button8" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-

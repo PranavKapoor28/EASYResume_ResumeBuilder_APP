@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#272626"
-    tools:context=".ActivityWork">
+    tools:context=".Work2Activity">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#ED070707"
+        android:background="#EE0C0C0C"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -25,12 +25,12 @@
 
             <TextView
                 android:id="@+id/textView5"
-                android:layout_width="338dp"
-                android:layout_height="42dp"
+                android:layout_width="345dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="50sp"
                 android:gravity="center_horizontal"
-                android:text="Add Your Work History"
+                android:text="Add Your Third Work History"
                 android:textColor="#FAFAF2"
                 android:textSize="30sp"
                 android:textStyle="bold|italic"
@@ -48,14 +48,16 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
                 android:background="#FAF7F7"
-                app:layout_constraintBottom_toTopOf="@+id/editText5"
+                app:layout_constraintBottom_toTopOf="@+id/e11"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView5"
-                app:layout_constraintVertical_bias="0.18"></TableRow>
+                app:layout_constraintVertical_bias="0.18">
+
+            </TableRow>
 
             <EditText
-                android:id="@+id/editText5"
+                android:id="@+id/e11"
                 android:layout_width="291dp"
                 android:layout_height="37dp"
                 android:layout_gravity="center"
@@ -74,7 +76,7 @@
                 app:layout_constraintVertical_bias="0.15" />
 
             <EditText
-                android:id="@+id/editText8"
+                android:id="@+id/e12"
                 android:layout_width="291dp"
                 android:layout_height="37dp"
                 android:layout_gravity="center"
@@ -84,16 +86,17 @@
                 android:gravity="center"
                 android:hint="Role"
                 android:inputType="textPersonName"
+
                 android:textColor="#FAFAF8F8"
                 android:textColorHint="#FAFFFFFF"
-                app:layout_constraintBottom_toTopOf="@id/editText6"
+                app:layout_constraintBottom_toTopOf="@id/e13"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editText5"
+                app:layout_constraintTop_toBottomOf="@+id/e11"
                 app:layout_constraintVertical_bias="0.027" />
 
             <EditText
-                android:id="@+id/editText6"
+                android:id="@+id/e13"
                 android:layout_width="291dp"
                 android:layout_height="37dp"
                 android:layout_gravity="center"
@@ -108,11 +111,11 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editText8"
+                app:layout_constraintTop_toBottomOf="@+id/e12"
                 app:layout_constraintVertical_bias="0.038" />
 
             <EditText
-                android:id="@+id/editText7"
+                android:id="@+id/e14"
                 android:layout_width="291dp"
                 android:layout_height="37dp"
                 android:layout_gravity="center"
@@ -127,11 +130,11 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editText6"
+                app:layout_constraintTop_toBottomOf="@+id/e13"
                 app:layout_constraintVertical_bias="0.115" />
 
             <EditText
-                android:id="@+id/editText9"
+                android:id="@+id/e15"
                 android:layout_width="334dp"
                 android:layout_height="65dp"
                 android:layout_gravity="center"
@@ -145,15 +148,15 @@
                 android:paddingTop="20sp"
                 android:textColor="#FCFFFFFF"
                 android:textColorHint="#E2F8F4F4"
-                app:layout_constraintBottom_toTopOf="@+id/button2"
+                app:layout_constraintBottom_toTopOf="@+id/b5"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.532"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editText7"
+                app:layout_constraintTop_toBottomOf="@+id/e14"
                 app:layout_constraintVertical_bias="0.552" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/b5"
                 android:layout_width="344dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -166,25 +169,9 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.475"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editText7"
+                app:layout_constraintTop_toBottomOf="@+id/e15"
                 app:layout_constraintVertical_bias="0.58" />
 
-            <Button
-                android:id="@+id/button10"
-                android:layout_width="354dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="40dp"
-                android:background="@drawable/buttonsubmit"
-                android:text="Add another Work experience"
-                android:textSize="18sp"
-                android:textStyle="bold|italic"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.461"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/button2"
-                app:layout_constraintVertical_bias="0.533" />
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

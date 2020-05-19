@@ -1,53 +1,34 @@
 package com.example.resumebuilder;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 public class SkillsActivity extends AppCompatActivity {
     Button button4;
     EditText editText13;
     EditText editText14;
     EditText editText15;
-    String st;
-    String st1;
-    String st2;
-    String st3;
-    String st4;
-    String st5;
-    String st6;
-    String st7;
-    String st8;
-    String st9;
-    String st10;
-    String st11;
-    String st12;
+
     String st13;
     String st14;
     String st15;
-    DatabaseReference reff;
-    ResumeModel resume;
-    long maxid=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE); //will hide the title
-        getSupportActionBar().hide(); // hide the title bar
+        getSupportActionBar().setTitle("SKILLS");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN); //enable full screen
         setContentView(R.layout.activity_skills);
@@ -56,56 +37,19 @@ public class SkillsActivity extends AppCompatActivity {
         editText13 = findViewById(R.id.editText13);
         editText14 = findViewById(R.id.editText14);
         editText15 = findViewById(R.id.editText15);
-        resume=new ResumeModel();
-        reff= FirebaseDatabase.getInstance().getReference().child("Member");
-
-
-        reff.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if (dataSnapshot.exists()){
-                    maxid=dataSnapshot.getChildrenCount();
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
 
 
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view4) {
 
-                Intent receiveIntent = getIntent();
-                st = receiveIntent.getStringExtra("Value");
-                st1 = receiveIntent.getStringExtra("Value1");
-                st2 = receiveIntent.getStringExtra("Value2");
-                st3 = receiveIntent.getStringExtra("Value3");
-                st4 = receiveIntent.getStringExtra("Value4");
-                st5 = receiveIntent.getStringExtra("Value5");
-                st6 = receiveIntent.getStringExtra("Value6");
-                st7 = receiveIntent.getStringExtra("Value7");
-                st8 = receiveIntent.getStringExtra("Value8");
-                st9 = receiveIntent.getStringExtra("Value9");
-                st10 = receiveIntent.getStringExtra("Value10");
-                st11 = receiveIntent.getStringExtra("Value11");
-                st12 = receiveIntent.getStringExtra("Value12");
-                st13 = receiveIntent.getStringExtra("Value13");
-                st14 = receiveIntent.getStringExtra("Value14");
-                st15 = receiveIntent.getStringExtra("Value15");
-
-                Intent skills = new Intent(SkillsActivity.this, ActivitySummary.class);
+                Intent skills = new Intent(SkillsActivity.this, HomePageActivity.class);
 
                 st13 = editText13.getText().toString();
                 st14 = editText14.getText().toString();
                 st15= editText15.getText().toString();
 
 
-                Toast.makeText(SkillsActivity.this,"data inserted successfully",Toast.LENGTH_LONG).show();
-                reff.child(String.valueOf(maxid+1)).setValue("member");
 
                 if(st13.length()==0)
                 {
@@ -123,27 +67,30 @@ public class SkillsActivity extends AppCompatActivity {
                     return;
                 }
 
+                SharedPreferences sharedpreferences = getSharedPreferences("MyData", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedpreferences.edit();
 
-                skills.putExtra("Value", st);
-                skills.putExtra("Value1", st1);
-                skills.putExtra("Value2", st2);
-                skills.putExtra("Value3", st3);
-                skills.putExtra("Value4", st4);
-                skills.putExtra("Value5", st5);
-                skills.putExtra("Value6", st6);
-                skills.putExtra("Value7", st7);
-                skills.putExtra("Value8", st8);
-                skills.putExtra("Value9", st9);
-                skills.putExtra("Value10", st10);
-                skills.putExtra("Value11", st11);
-                skills.putExtra("Value12", st12);
-                skills.putExtra("Value13", st13);
-                skills.putExtra("Value14", st14);
-                skills.putExtra("Value15", st15);
+                editor.putString("perskills", st13);
+                editor.putString("techskills", st14);
+                editor.putString("funcskills", st15);
+
+                editor.apply();
+
 
                 startActivity(skills);
 
             }
         });
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        Intent myIntent = new Intent(getApplicationContext(), HomePageActivity.class);
+        startActivityForResult(myIntent, 0);
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        return true;
     }
 }

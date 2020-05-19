@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/back"
+    android:background="#2C2B2B"
     tools:context=".ContactResume">
 
     <ImageView
@@ -23,6 +23,7 @@
         android:id="@+id/textView39"
         android:layout_width="363dp"
         android:layout_height="59dp"
+        android:gravity="center"
         android:text="Hey!!  I am Pranav Kapoor. I am the creater of EasyRESUME. "
         android:textColor="#FCF7EFEF"
         android:textSize="24sp"
@@ -38,6 +39,7 @@
         android:id="@+id/textView40"
         android:layout_width="365dp"
         android:layout_height="167dp"
+        android:gravity="center"
         android:text="I built the EasyRESUME app to help students and people seeking for a professional resume without and difficulty . I hope you all find my app useful !!"
         android:textColor="#FCF5F2F2"
         android:textSize="24sp"
@@ -53,6 +55,7 @@
         android:id="@+id/textView41"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:text="PRANAV KAPOOR"
         android:textColor="#EEFF41"
         android:textSize="18sp"
@@ -66,8 +69,9 @@
 
     <TextView
         android:id="@+id/textView42"
-        android:layout_width="384dp"
-        android:layout_height="38dp"
+        android:layout_width="387dp"
+        android:layout_height="65dp"
+        android:gravity="center"
         android:text="VELLORE INSTITUTE OF TECHNOLOGY,VELLORE"
         android:textColor="#EEFF41"
         android:textSize="18sp"

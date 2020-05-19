@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/back"
+    android:background="#EA070707"
     tools:context=".ActivitySummary">
 
     <EditText
         android:id="@+id/editText16"
-        android:layout_width="376dp"
-        android:layout_height="156dp"
-        android:background="#4DEEE7E7"
+        android:layout_width="372dp"
+        android:layout_height="160dp"
+        android:background="#6FFFFFFF"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
@@ -27,6 +27,7 @@
         android:id="@+id/textView11"
         android:layout_width="313dp"
         android:layout_height="78dp"
+        android:gravity="center"
         android:text="Add Your Professional Summary"
         android:textColor="#FCFCF2F2"
         android:textSize="30sp"
@@ -66,11 +67,11 @@
 
     <Button
         android:id="@+id/button5"
-        android:layout_width="196dp"
-        android:layout_height="49dp"
-        android:background="#75DD5E"
+        android:layout_width="302dp"
+        android:layout_height="47dp"
+        android:background="@drawable/buttonsubmit"
         android:padding="10sp"
-        android:text="Get Your Resume"
+        android:text="SAVE"
         android:textColor="#0F0101"
         android:textSize="18sp"
         android:textStyle="bold|italic"
