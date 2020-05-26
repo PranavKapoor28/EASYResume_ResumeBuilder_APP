@@ -13,7 +13,10 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class ActivityWork extends AppCompatActivity {
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+public class Work1Activity extends AppCompatActivity {
 
     Button button2;
     Button button10;
@@ -30,7 +33,8 @@ public class ActivityWork extends AppCompatActivity {
     String st8;
     String st9;
     SharedPreferences sharedpreferences;
-
+    FirebaseDatabase rootNode1;
+    DatabaseReference reference1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +44,7 @@ public class ActivityWork extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN); //enable full screen
-        setContentView(R.layout.activity_work);
+        setContentView(R.layout.activity_work1);
 
 /*
 
@@ -67,13 +71,19 @@ public class ActivityWork extends AppCompatActivity {
         button10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view10) {
+
+
+                rootNode1=FirebaseDatabase.getInstance();
+                reference1=rootNode1.getReference().child("Work Experience");
+
                 st5 = editText5.getText().toString();
                 st6 = editText6.getText().toString();
                 st7 = editText7.getText().toString();
                 st8 = editText8.getText().toString();
                 st9 = editText9.getText().toString();
+                WorkHelperClass workHelperClass=new WorkHelperClass(st5,st6,st7,st8,st9);
 
-
+                reference1.child(st5).setValue(workHelperClass);
 
                 if(st5.length()==0)
                 {
@@ -110,7 +120,7 @@ public class ActivityWork extends AppCompatActivity {
                 editor.putString("eDate", st8);
                 editor.putString("Position", st9);
                 editor.apply();
-                Intent i = new Intent(ActivityWork.this, Work2Activity.class);
+                Intent i = new Intent(Work1Activity.this, Work2Activity.class);
                 startActivity(i);
 
             }
@@ -119,14 +129,17 @@ public class ActivityWork extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view2) {
-
+                rootNode1=FirebaseDatabase.getInstance();
+                reference1=rootNode1.getReference().child("Work Experience");
 
                 st5 = editText5.getText().toString();
                 st6 = editText6.getText().toString();
                 st7 = editText7.getText().toString();
                 st8 = editText8.getText().toString();
                 st9 = editText9.getText().toString();
+                WorkHelperClass workHelperClass=new WorkHelperClass(st5,st6,st7,st8,st9);
 
+                reference1.child(st5).setValue(workHelperClass);
 
 
                 if(st5.length()==0)
@@ -164,7 +177,7 @@ public class ActivityWork extends AppCompatActivity {
                 editor.putString("eDate", st8);
                 editor.putString("Position", st9);
                 editor.apply();
-                Intent i = new Intent(ActivityWork.this, HomePageActivity.class);
+                Intent i = new Intent(Work1Activity.this, HomePageActivity.class);
                 startActivity(i);
 
 

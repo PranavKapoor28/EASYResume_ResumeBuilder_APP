@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000"
+    android:background="#232323"
 
     android:orientation="vertical">
 
@@ -12,49 +13,45 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="42sp"
-        android:text="EASYRESUME"
+        android:text="Create Your Resume"
         android:textColor="#FDFBFB"
-        android:textSize="36sp"
+        android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/button11"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.582"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.062" />
 
     <View
         android:id="@+id/divider2"
         android:layout_width="match_parent"
         android:layout_height="5dp"
         android:layout_gravity="center"
-        android:layout_marginTop="30sp"
         android:background="@color/background_light"
-        app:layout_constraintBottom_toTopOf="@+id/divider"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView43" />
+        app:layout_constraintTop_toBottomOf="@+id/textView43"
+        app:layout_constraintVertical_bias="0.091" />
 
-    <View
-        android:id="@+id/divider"
-        android:layout_width="match_parent"
-        android:layout_height="4dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="20sp"
-        android:layout_marginBottom="60sp"
-        android:background="@color/background_light"
-        app:layout_constraintBottom_toTopOf="@+id/button11"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView43" />
-
-    <LinearLayout
+    <androidx.cardview.widget.CardView
         android:id="@+id/list1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+        android:layout_margin="15dp"
         android:background="@drawable/listcolour"
-        android:elevation="22sp"
-        android:orientation="horizontal">
+        android:elevation="42sp"
+        android:orientation="horizontal"
+        app:cardBackgroundColor="#FC333232"
+        app:layout_constraintBottom_toTopOf="@+id/list2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider2"
+        app:layout_constraintVertical_bias="0.9">
 
         <ImageView
             android:id="@+id/milkimage"
@@ -65,30 +62,32 @@
 
         <TextView
             android:id="@+id/milk"
-            android:layout_width="match_parent"
+            android:layout_width="270dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
+            android:layout_gravity="end|center_vertical"
             android:paddingLeft="15dp"
             android:text="Personal Information"
             android:textColor="#FAD35B"
             android:textSize="24sp"
             android:textStyle="bold" />
 
-    </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="#FFFFFF"></View>
-
-    <LinearLayout
+    <androidx.cardview.widget.CardView
         android:id="@+id/list2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+        android:layout_margin="15dp"
         android:background="@drawable/listcolour"
-        android:elevation="22sp"
-        android:orientation="horizontal">
+        android:elevation="42sp"
+        android:orientation="horizontal"
+        app:cardBackgroundColor="#FC333232"
+        app:layout_constraintBottom_toTopOf="@+id/list3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider2"
+        app:layout_constraintVertical_bias="0.94">
 
         <ImageView
             android:id="@+id/riceImage"
@@ -99,31 +98,32 @@
 
         <TextView
             android:id="@+id/rice"
-            android:layout_width="match_parent"
+            android:layout_width="270dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
+            android:layout_gravity="end|center_vertical"
             android:paddingLeft="15dp"
             android:text="Educational Information"
             android:textColor="#FAD35B"
             android:textSize="24sp"
             android:textStyle="bold" />
 
-    </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="#FFFFFF"
-        android:elevation="22sp"></View>
-
-    <LinearLayout
+    <androidx.cardview.widget.CardView
         android:id="@+id/list3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+        android:layout_margin="15dp"
         android:background="@drawable/listcolour"
-        android:elevation="22sp"
-        android:orientation="horizontal">
+        android:elevation="42sp"
+        android:orientation="horizontal"
+        app:cardBackgroundColor="#FC333232"
+        app:layout_constraintBottom_toTopOf="@+id/list4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider2"
+        app:layout_constraintVertical_bias="0.952">
 
         <ImageView
             android:id="@+id/nutsImage"
@@ -134,30 +134,32 @@
 
         <TextView
             android:id="@+id/Nuts"
-            android:layout_width="match_parent"
+            android:layout_width="270dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
+            android:layout_gravity="end|center_vertical"
             android:paddingLeft="15dp"
             android:text="Work Experience"
             android:textColor="#FAD35B"
             android:textSize="24sp"
             android:textStyle="bold" />
 
-    </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="#FFFFFF"></View>
-
-    <LinearLayout
+    <androidx.cardview.widget.CardView
         android:id="@+id/list4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+        android:layout_margin="15dp"
         android:background="@drawable/listcolour"
-        android:elevation="22sp"
-        android:orientation="horizontal">
+        android:elevation="42sp"
+        android:orientation="horizontal"
+        app:cardBackgroundColor="#FC323131"
+        app:layout_constraintBottom_toTopOf="@+id/list5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider2"
+        app:layout_constraintVertical_bias="0.971">
 
         <ImageView
             android:id="@+id/meatImage"
@@ -168,31 +170,32 @@
 
         <TextView
             android:id="@+id/RedMeats"
-            android:layout_width="match_parent"
+            android:layout_width="270dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
+            android:layout_gravity="end|center_vertical"
             android:paddingLeft="15dp"
             android:text="Skills"
             android:textColor="#FAD35B"
             android:textSize="24sp"
             android:textStyle="bold" />
 
-    </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="#FFFFFF"
-        android:elevation="22sp"></View>
-
-    <LinearLayout
+    <androidx.cardview.widget.CardView
         android:id="@+id/list5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+        android:layout_margin="15dp"
         android:background="@drawable/listcolour"
-        android:elevation="22sp"
-        android:orientation="horizontal">
+        android:elevation="42sp"
+        android:orientation="horizontal"
+        app:cardBackgroundColor="#FC333232"
+        app:layout_constraintBottom_toTopOf="@+id/list6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider2"
+        app:layout_constraintVertical_bias="0.979">
 
         <ImageView
             android:id="@+id/PotatoeImage"
@@ -203,30 +206,33 @@
 
         <TextView
             android:id="@+id/potatoes"
-            android:layout_width="match_parent"
+            android:layout_width="270dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
+            android:layout_gravity="end|center_vertical"
             android:paddingLeft="15dp"
             android:text="Professional Summary"
             android:textColor="#FAD35B"
             android:textSize="24sp"
             android:textStyle="bold" />
 
-    </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="#FFFFFF"></View>
-
-    <LinearLayout
+    <androidx.cardview.widget.CardView
         android:id="@+id/list6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+        android:layout_margin="15dp"
         android:background="@drawable/listcolour"
-        android:elevation="22sp"
-        android:orientation="horizontal">
+        android:elevation="42sp"
+        android:onClick="@drawable/listcolour"
+        android:orientation="horizontal"
+        app:cardBackgroundColor="#FC333232"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/divider2"
+        app:layout_constraintVertical_bias="0.886">
 
         <ImageView
             android:id="@+id/driedImage"
@@ -237,20 +243,15 @@
 
         <TextView
             android:id="@+id/DriedFruits"
-            android:layout_width="match_parent"
+            android:layout_width="270dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
+            android:layout_gravity="end|center_vertical"
             android:paddingLeft="15dp"
             android:text="View Your Resume"
             android:textColor="#FAD35B"
             android:textSize="24sp"
             android:textStyle="bold" />
 
-    </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="#FFFFFF"></View>
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

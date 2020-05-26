@@ -11,7 +11,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Work3Activity"></activity>
+        <activity android:name=".TemplateDrawer"
+            android:exported="true">
+
+        </activity>
+        <activity android:name=".Template5Activity" />
+        <activity android:name=".Template4Activity" />
+        <activity android:name=".Template3Activity" />
+        <activity android:name=".Template2Activity" />
+        <activity android:name=".Work3Activity" />
         <activity android:name=".Work2Activity" />
         <activity android:name=".Education3Activity" />
         <activity
@@ -34,11 +42,11 @@
             android:name=".EducationActivity"
             android:exported="true" />
         <activity
-            android:name=".ActivityWork"
+            android:name=".Work1Activity"
             android:exported="true"
             android:parentActivityName=".ResumeActivity" />
         <activity
-            android:name=".SecondActivity"
+            android:name=".Template1Activity"
             android:exported="true" />
         <activity
             android:name=".SplashActivity"

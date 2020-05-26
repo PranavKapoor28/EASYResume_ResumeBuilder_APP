@@ -13,13 +13,17 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class ActivitySummary extends AppCompatActivity {
 
     Button button5;
     EditText editText16;
 
     String st16;
-
+    FirebaseDatabase rootNode;
+    DatabaseReference reference;
 
 
 
@@ -40,9 +44,14 @@ public class ActivitySummary extends AppCompatActivity {
             public void onClick(View view5) {
 
 
-                Intent summary = new Intent(ActivitySummary.this, SecondActivity.class);
-
+                Intent summary = new Intent(ActivitySummary.this, Template1Activity.class);
+                rootNode=FirebaseDatabase.getInstance();
+                reference=rootNode.getReference().child("Professional Summary Info");
                 st16 = editText16.getText().toString();
+
+                SummaryHelperClass summaryHelperClass=new SummaryHelperClass(st16);
+
+                reference.child(st16).setValue(summaryHelperClass);
 
                 if(st16.length()==0)
                 {

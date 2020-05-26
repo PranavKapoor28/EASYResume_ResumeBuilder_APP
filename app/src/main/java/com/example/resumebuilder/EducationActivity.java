@@ -13,6 +13,9 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class EducationActivity extends AppCompatActivity {
 
     Button button3;
@@ -26,6 +29,8 @@ public class EducationActivity extends AppCompatActivity {
     String st12;
 
     SharedPreferences sharedpreferences;
+    FirebaseDatabase rootNode1;
+    DatabaseReference reference1;
 
 
 
@@ -53,9 +58,16 @@ public class EducationActivity extends AppCompatActivity {
             @Override
             public void onClick(View view11) {
 
+                rootNode1=FirebaseDatabase.getInstance();
+                reference1=rootNode1.getReference().child("Educational Info");
+
                 st10 = editText10.getText().toString();
                 st11 = editText11.getText().toString();
                 st12= editText12.getText().toString();
+
+                EducationHelperClass educationHelperClass=new EducationHelperClass(st10,st11,st12);
+
+                reference1.child(st11).setValue(educationHelperClass);
 
 
                 if(st10.length()==0)
@@ -89,10 +101,16 @@ public class EducationActivity extends AppCompatActivity {
             @Override
             public void onClick(View view3) {
 
+                rootNode1=FirebaseDatabase.getInstance();
+                reference1=rootNode1.getReference().child("Educational Info");
 
                 st10 = editText10.getText().toString();
                 st11 = editText11.getText().toString();
                 st12= editText12.getText().toString();
+
+                EducationHelperClass educationHelperClass=new EducationHelperClass(st10,st11,st12);
+
+                reference1.child(st11).setValue(educationHelperClass);
 
 
                 if(st10.length()==0)

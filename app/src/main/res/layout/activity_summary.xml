@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EA070707"
+    android:background="#EE000000"
     tools:context=".ActivitySummary">
 
     <EditText
         android:id="@+id/editText16"
         android:layout_width="372dp"
         android:layout_height="160dp"
-        android:background="#6FFFFFFF"
+        android:background="#26FFFFFF"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"

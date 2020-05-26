@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#2C2B2B"
+    android:background="#EE000000"
     tools:context=".ContactResume">
 
     <ImageView
@@ -57,7 +57,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="PRANAV KAPOOR"
-        android:textColor="#EEFF41"
+        android:textColor="#EF6306"
         android:textSize="18sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -69,11 +69,11 @@
 
     <TextView
         android:id="@+id/textView42"
-        android:layout_width="387dp"
-        android:layout_height="65dp"
+        android:layout_width="383dp"
+        android:layout_height="85dp"
         android:gravity="center"
         android:text="VELLORE INSTITUTE OF TECHNOLOGY,VELLORE"
-        android:textColor="#EEFF41"
+        android:textColor="#F16406"
         android:textSize="18sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"

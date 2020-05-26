@@ -13,6 +13,9 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class Work3Activity extends AppCompatActivity {
 
     Button b5;
@@ -30,7 +33,8 @@ public class Work3Activity extends AppCompatActivity {
     String s14;
     String s15;
     SharedPreferences sharedpreferences;
-
+    FirebaseDatabase rootNode1;
+    DatabaseReference reference1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,13 +62,16 @@ public class Work3Activity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-
+                rootNode1=FirebaseDatabase.getInstance();
+                reference1=rootNode1.getReference().child("Work Experience");
                 s11 = e11.getText().toString();
                 s12 = e12.getText().toString();
                 s13 = e13.getText().toString();
                 s14 = e14.getText().toString();
                 s15 = e15.getText().toString();
+                WorkHelperClass workHelperClass=new WorkHelperClass(s11,s12,s13,s14,s15);
 
+                reference1.child(s11).setValue(workHelperClass);
 
                 if (s11.length() == 0) {
                     e11.setError("ENTER A VALID COMPANY NAME");

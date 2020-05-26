@@ -10,25 +10,24 @@ import android.view.WindowManager;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
-public class HomePageActivity extends AppCompatActivity {
-
+public class TemplateDrawer extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getSupportActionBar().setTitle("EasyRESUME");
+        getSupportActionBar().setTitle("Select Your Templates");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN); //enable full screen
-        setContentView(R.layout.activity_home_page);
 
-        CardView cardView1 =findViewById(R.id.list1);
-        CardView cardView2=findViewById(R.id.list2);
-        CardView cardView3=findViewById(R.id.list3);
-        CardView cardView4=findViewById(R.id.list4);
-        CardView cardView5=findViewById(R.id.list5);
-        CardView cardView6=findViewById(R.id.list6);
+        setContentView(R.layout.activity_template_drawer);
+
+        CardView cardView1 =findViewById(R.id.cardView2);
+        CardView cardView2=findViewById(R.id.cardView3);
+        CardView cardView3=findViewById(R.id.cardView4);
+        CardView cardView4=findViewById(R.id.cardView5);
+        CardView cardView5=findViewById(R.id.cardView6);
 
 
         cardView1.setOnClickListener(new View.OnClickListener() {
@@ -36,17 +35,19 @@ public class HomePageActivity extends AppCompatActivity {
             public void onClick(View resume) {
 
 
-                Intent resumeper = new Intent(getApplicationContext(), ResumeActivity.class);
+                Intent resumeper = new Intent(getApplicationContext(),Template2Activity.class);
                 startActivity(resumeper);
             }
         });
+
+
 
         cardView2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View about) {
 
 
-                Intent resumeedu = new Intent(getApplicationContext(), EducationActivity.class);
+                Intent resumeedu = new Intent(getApplicationContext(), Template1Activity.class);
                 startActivity(resumeedu);
             }
         });
@@ -56,7 +57,7 @@ public class HomePageActivity extends AppCompatActivity {
             public void onClick(View CONTACT) {
 
 
-                Intent resumework = new Intent(getApplicationContext(), Work1Activity.class);
+                Intent resumework = new Intent(getApplicationContext(), Template3Activity.class);
                 startActivity(resumework);
             }
         });
@@ -66,7 +67,7 @@ public class HomePageActivity extends AppCompatActivity {
             public void onClick(View CONTACT) {
 
 
-                Intent resumeskills = new Intent(getApplicationContext(), SkillsActivity.class);
+                Intent resumeskills = new Intent(getApplicationContext(), Template5Activity.class);
                 startActivity(resumeskills);
             }
         });
@@ -75,25 +76,16 @@ public class HomePageActivity extends AppCompatActivity {
             public void onClick(View CONTACT) {
 
 
-                Intent resumesummary = new Intent(getApplicationContext(), ActivitySummary.class);
+                Intent resumesummary = new Intent(getApplicationContext(), Template4Activity.class);
                 startActivity(resumesummary);
             }
         });
 
-        cardView6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View RESUME) {
-
-
-                Intent resume = new Intent(getApplicationContext(), TemplateDrawer.class);
-                startActivity(resume);
-            }
-        });
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
-        Intent myIntent = new Intent(getApplicationContext(), MainActivity.class);
+        Intent myIntent = new Intent(getApplicationContext(), HomePageActivity.class);
         startActivityForResult(myIntent, 0);
 
         return super.onOptionsItemSelected(item);

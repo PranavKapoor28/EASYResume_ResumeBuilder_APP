@@ -13,6 +13,9 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class SkillsActivity extends AppCompatActivity {
     Button button4;
     EditText editText13;
@@ -22,6 +25,8 @@ public class SkillsActivity extends AppCompatActivity {
     String st13;
     String st14;
     String st15;
+    FirebaseDatabase rootNode1;
+    DatabaseReference reference1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,11 +50,16 @@ public class SkillsActivity extends AppCompatActivity {
 
                 Intent skills = new Intent(SkillsActivity.this, HomePageActivity.class);
 
+
+                rootNode1=FirebaseDatabase.getInstance();
+                reference1=rootNode1.getReference().child("Skills Info");
                 st13 = editText13.getText().toString();
                 st14 = editText14.getText().toString();
                 st15= editText15.getText().toString();
 
+                SkillsHelperActivity skillsHelperActivity =new SkillsHelperActivity(st13,st14,st15);
 
+                reference1.child(st13).setValue(skillsHelperActivity);
 
                 if(st13.length()==0)
                 {

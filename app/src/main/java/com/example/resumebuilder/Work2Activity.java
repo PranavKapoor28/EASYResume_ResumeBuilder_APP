@@ -13,6 +13,9 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class Work2Activity extends AppCompatActivity {
 
     Button b3;
@@ -30,7 +33,8 @@ public class Work2Activity extends AppCompatActivity {
     String s10;
     String s11;
     SharedPreferences sharedpreferences;
-
+    FirebaseDatabase rootNode1;
+    DatabaseReference reference1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,11 +73,16 @@ public class Work2Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                rootNode1=FirebaseDatabase.getInstance();
+                reference1=rootNode1.getReference().child("Work Experience");
                 s7 = e6.getText().toString();
                 s8 = e7.getText().toString();
                 s9 = e8.getText().toString();
                 s10 = e9.getText().toString();
                 s11 = e10.getText().toString();
+                WorkHelperClass workHelperClass=new WorkHelperClass(s7,s8,s9,s10,s11);
+
+                reference1.child(s7).setValue(workHelperClass);
 
 
                 if (s7.length() == 0) {
@@ -118,11 +127,16 @@ public class Work2Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                rootNode1=FirebaseDatabase.getInstance();
+                reference1=rootNode1.getReference().child("Work Experience");
                 s7 = e6.getText().toString();
                 s8 = e7.getText().toString();
                 s9 = e8.getText().toString();
                 s10 = e9.getText().toString();
                 s11 = e10.getText().toString();
+                WorkHelperClass workHelperClass=new WorkHelperClass(s7,s8,s9,s10,s11);
+
+                reference1.child(s7).setValue(workHelperClass);
 
 
                 if (s7.length() == 0) {
@@ -164,7 +178,7 @@ public class Work2Activity extends AppCompatActivity {
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
-        Intent myIntent = new Intent(getApplicationContext(), ActivityWork.class);
+        Intent myIntent = new Intent(getApplicationContext(), Work1Activity.class);
         startActivityForResult(myIntent, 0);
 
         return super.onOptionsItemSelected(item);
